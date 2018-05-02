@@ -38,9 +38,9 @@ class site
     /**
      * @var float
      *
-     * @ORM\Column(name="lattitude", type="float")
+     * @ORM\Column(name="latitude", type="float")
      */
-    private $lattitude;
+    private $latitude;
 
     /**
      * @var float
@@ -116,27 +116,27 @@ class site
     }
 
     /**
-     * Set lattitude
+     * Set latitude
      *
-     * @param float $lattitude
+     * @param float $latitude
      *
      * @return site
      */
-    public function setLattitude($lattitude)
+    public function setLatitude($latitude)
     {
-        $this->lattitude = $lattitude;
+        $this->latitude = $latitude;
 
         return $this;
     }
 
     /**
-     * Get lattitude
+     * Get latitude
      *
      * @return float
      */
-    public function getLattitude()
+    public function getLatitude()
     {
-        return $this->lattitude;
+        return $this->latitude;
     }
 
     /**

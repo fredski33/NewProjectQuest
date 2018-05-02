@@ -12,7 +12,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
  *
  * @Route("site")
  */
-class siteController extends Controller
+class SiteController extends Controller
 {
     /**
      * Lists all site entities.
@@ -24,7 +24,7 @@ class siteController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $sites = $em->getRepository('AppBundle:site')->findAll();
+        $sites = $em->getRepository('Site.php')->findAll();
 
         return $this->render('site/index.html.twig', array(
             'sites' => $sites,
