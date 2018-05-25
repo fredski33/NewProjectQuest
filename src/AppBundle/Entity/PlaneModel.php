@@ -12,6 +12,20 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class PlaneModel
 {
+    /*
+     * Adding personal methods / variables
+     */
+
+    public function __toString()
+    {
+        // Return the Site object with "[MANUFACTURER] - [MODEL]" format, when __toString is called.
+        return $this->manufacturer . " - " . $this->model;
+    }
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Flight", mappedBy="plane")
+     */
+    private $planes;
+
     /**
      * @var int
      *
@@ -186,5 +200,20 @@ class PlaneModel
     {
         return $this->isAvailable;
     }
-}
 
+    /**
+     * @return mixed
+     */
+    public function getPlanes()
+    {
+        return $this->planes;
+    }
+
+    /**
+     * @param mixed $planes
+     */
+    public function setPlanes($planes)
+    {
+        $this->planes = $planes;
+    }
+}

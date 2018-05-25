@@ -2,7 +2,7 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\site;
+use AppBundle\Entity\Site;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -37,7 +37,7 @@ class SiteController extends Controller
      * @Route("/{id}", name="site_show")
      * @Method("GET")
      */
-    public function showAction(site $site)
+    public function showAction(Site $site)
     {
 
         return $this->render('site/show.html.twig', array(
