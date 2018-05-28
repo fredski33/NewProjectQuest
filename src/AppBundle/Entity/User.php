@@ -18,7 +18,7 @@ class User
 
     public function __toString()
     {
-        // Return the Site object with "[FIRSTNAME] - [LASTNAME]" format, when __toString is called.
+        // Return the pilot object with "[FIRSTNAME] - [LASTNAME]" format, when __toString is called.
         return $this->firstName . " - " . $this->lastName . " ";
     }
 
@@ -33,7 +33,7 @@ class User
     private $writtenReviews;
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\User", mappedBy="passenger")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Reservation", mappedBy="passenger")
      */
     private $passenger;
 

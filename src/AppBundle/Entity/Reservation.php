@@ -12,7 +12,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Reservation
 {
-
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Flight", inversedBy="flight")
      * @ORM\JoinColumn(nullable=false)

@@ -21,6 +21,7 @@ class Flight
     {
         // Return the Site object with "[DEPARTURE] - [ARRIVAL] - [PLANE]" format, when __toString is called.
         return $this->departure . " - " . $this->arrival . " - " . $this->plane;
+
     }
 
     /**
@@ -48,7 +49,7 @@ class Flight
     private $pilot;
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Flight", mappedBy="flight")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Reservation", mappedBy="flight")
      */
     private $flight;
 
