@@ -13,10 +13,12 @@ class ReviewType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('userRated')->add('reviewAuthor')->add('text')->add('publicationDate')->add('note');
+        $builder->add('userRated')->add('reviewAuthor')
+                ->add('text')->add('publicationDate')
+                ->add('note');
     }/**
-     * {@inheritdoc}
-     */
+ * {@inheritdoc}
+ */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
@@ -34,3 +36,5 @@ class ReviewType extends AbstractType
 
 
 }
+
+

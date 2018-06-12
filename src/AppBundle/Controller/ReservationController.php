@@ -24,7 +24,8 @@ class ReservationController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $reservations = $em->getRepository('AppBundle:Reservation')->findAll();
+        $reservations = $em->getRepository('AppBundle:Reservation')
+                           ->findAll();
 
         return $this->render('reservation/index.html.twig', array(
             'reservations' => $reservations,
@@ -40,7 +41,8 @@ class ReservationController extends Controller
     public function newAction(Request $request)
     {
         $reservation = new Reservation();
-        $form = $this->createForm('AppBundle\Form\ReservationType', $reservation);
+        $form = $this->createForm('AppBundle\Form\ReservationType',
+                                  $reservation);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -48,7 +50,8 @@ class ReservationController extends Controller
             $em->persist($reservation);
             $em->flush();
 
-            return $this->redirectToRoute('reservation_show', array('id' => $reservation->getId()));
+            return $this->redirectToRoute('reservation_show',
+                                          array('id' => $reservation->getId()));
         }
 
         return $this->render('reservation/new.html.twig', array(
@@ -82,13 +85,15 @@ class ReservationController extends Controller
     public function editAction(Request $request, Reservation $reservation)
     {
         $deleteForm = $this->createDeleteForm($reservation);
-        $editForm = $this->createForm('AppBundle\Form\ReservationType', $reservation);
+        $editForm = $this->createForm('AppBundle\Form\ReservationType',
+                                      $reservation);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('reservation_edit', array('id' => $reservation->getId()));
+            return $this->redirectToRoute('reservation_edit',
+                                          array('id' => $reservation->getId()));
         }
 
         return $this->render('reservation/edit.html.twig', array(
@@ -128,7 +133,8 @@ class ReservationController extends Controller
     private function createDeleteForm(Reservation $reservation)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('reservation_delete', array('id' => $reservation->getId())))
+            ->setAction($this->generateUrl('reservation_delete',
+                                          array('id' => $reservation->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;
