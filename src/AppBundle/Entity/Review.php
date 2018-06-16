@@ -14,7 +14,6 @@ class Review
 {
     /**
      * @var int
-     *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -22,7 +21,7 @@ class Review
     private $id;
 
     /**
-     * @var int
+     * @var User
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
      * @ORM\JoinColumn(nullable=false)
      */

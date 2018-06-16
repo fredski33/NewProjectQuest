@@ -12,15 +12,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class User
 {
-    /*
-     * Adding personal methods / variables
-     */
-
-    public function __toString()
-    {
-        // Return the pilot object with "[FIRSTNAME] - [LASTNAME]" format, when __toString is called.
-        return $this->firstName . " - " . $this->lastName . " ";
-    }
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Flight", mappedBy="pilot")
@@ -336,6 +327,15 @@ class User
     public function setWrittenReviews($writtenReviews)
     {
         $this->writtenReviews = $writtenReviews;
+    }
+
+    /*
+     * Adding personal methods / variables
+     */
+    public function __toString()
+    {
+        // Return the pilot object with "[FIRSTNAME] - [LASTNAME]" format, when __toString is called.
+        return $this->firstName . " - " . $this->lastName . " ";
     }
 }
 
