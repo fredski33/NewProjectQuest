@@ -40,11 +40,13 @@ class ReviewType extends AbstractType
             ])
             ->add('userRated', EntityType::class, [
                 'class' => User::class,
-                'query_builder' => function (UserRepository $userRepository) {
+                //Truc qui craint à dégager maybe
+                /*'query_builder' => function (UserRepository $userRepository) {
                     return $userRepository->createQueryBuilder('u')
                         ->orderBy('u.lastName', 'ASC');
                 },
                 'choice_label' => 'phoneNumber'
+                */
             ])
             ->add('reviewAuthor')
             ->add('submit', SubmitType::class, [
