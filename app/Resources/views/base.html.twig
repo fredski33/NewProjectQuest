@@ -4,11 +4,30 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-        <link rel="stylesheet" href="{{ asset('build/app.css') }}" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ asset('build/style.css') }}" />
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div id="wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">
+                    <i class="fa fa-plane"></i>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" href="{{ path('planemodel_index') }}">See planes</a>
+                        <a class="nav-item nav-link" href="{{ path('reservation_index') }}">See reservations</a>
+                        <a class="nav-item nav-link" href="{{ path('flight_index') }}">See flights</a>
+                        <a class="nav-item nav-link" href="{{ path('site_index') }}">See airports</a>
+                    </div>
+                </div>
+            </nav>
+            {% block body %}{% endblock %}
+        </div>
         <script type="text/javascript" src="{{ asset('build/app.js') }}"></script>
         {% block javascripts %}{% endblock %}
     </body>

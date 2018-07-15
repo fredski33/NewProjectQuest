@@ -1,6 +1,8 @@
-require('../css/app.scss');
-require('jquery');
+import $ from "jquery";
+import 'bootstrap';
 
+$(document).ready(function () {
+    console.log("ok, JQuery fonctionne !");
+});
 
-
-console.log($(document));
+console.log('Bienvenue sur WebPack!');

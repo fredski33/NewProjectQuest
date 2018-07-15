@@ -24,7 +24,7 @@ class SiteController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $sites = $em->getRepository('Site.php')->findAll();
+        $sites = $em->getRepository('AppBundle\Entity\Site')->findAll();
 
         return $this->render('site/index.html.twig', array(
             'sites' => $sites,
